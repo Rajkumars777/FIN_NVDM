@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+:root {
+  /* Light Mode (Base) - Keeping it clean but premium */
+  --background: #f0f2f5;
+  --foreground: #1a1a2e;
+  
+  --card: #ffffff;
+  --card-foreground: #1a1a2e;
+  
+  --popover: #ffffff;
+  --popover-foreground: #1a1a2e;
+  
+  --primary: #1a1a2e;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #eef2f6;
+  --secondary-foreground: #1a1a2e;
+  
+  --muted: #eef2f6;
+  --muted-foreground: #64748b;
+  
+  --accent: #6C5DD3;
+  --accent-foreground: #ffffff;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #dbe0e8;
+  --input: #dbe0e8;
+  --ring: #6C5DD3;
+  
+  --radius: 1.25rem;
+  
+  /* Chart Colors */
+  --chart-1: #6C5DD3;
+  --chart-2: #10b981;
+  --chart-3: #ef4444;
+  --chart-4: #f59e0b;
+  --chart-5: #3b82f6;
+
+  /* Custom Dashboard Colors */
+  --sidebar-bg: #ffffff;
+  --sidebar-fg: #1a1a2e;
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+}
+
+.dark {
+  /* Premium Dark Mode (The Main Event) */
+  --background: #05050A; /* Ultra deep blue/black */
+  --foreground: #ffffff;
+  
+  /* Card: Rich dark with slight blue tint, lighter than bg */
+  --card: #0d0d12;
+  --card-foreground: #ffffff;
+  
+  --popover: #0d0d12;
+  --popover-foreground: #ffffff;
+  
+  --primary: #ffffff;
+  --primary-foreground: #05050A;
+  
+  --secondary: #1a1a2e;
+  --secondary-foreground: #ffffff;
+  
+  --muted: #1c1c24;
+  --muted-foreground: #94a3b8;
+  
+  --accent: #6C5DD3; /* The Brand Purple */
+  --accent-foreground: #ffffff;
+  
+  --destructive: #ff4d4d;
+  --destructive-foreground: #ffffff;
+
+  /* Borders: Very subtle, almost invisible */
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08); /* Glassy inputs */
+  --ring: #6C5DD3;
+  
+  --sidebar-bg: #05050A; /* Matches bg for seamless look */
+  --sidebar-fg: #94a3b8;
+
+  /* Glassmorphism helpers */
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(13, 13, 18, 0.6);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--muted-foreground);
+  border-radius: 9999px;
+  opacity: 0.5;
+}
