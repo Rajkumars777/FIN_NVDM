@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import TopicWordCloud from "@/components/TopicWordCloud";
@@ -7,11 +8,14 @@ import SectorMatrix from "@/components/SectorMatrix";
 import { FlaskConical, MoveRight } from "lucide-react";
 
 export default function AlphaLab() {
+    const [isCollapsed, setIsCollapsed] = useState(false);
+    const toggleSidebar = () => setIsCollapsed(!isCollapsed);
+
     return (
         <div className="flex min-h-screen bg-transparent text-foreground font-sans transition-colors duration-300">
-            <Sidebar />
+            <Sidebar isCollapsed={isCollapsed} toggleSidebar={toggleSidebar} />
 
-            <main className="flex-1 ml-64 overflow-x-hidden bg-background/95 min-h-screen">
+            <main className={`flex-1 overflow-x-hidden bg-background/95 min-h-screen transition-all duration-300 ${isCollapsed ? 'ml-20' : 'ml-64'}`}>
                 <Header />
 
                 <div className="p-8 space-y-8 max-w-[1920px] mx-auto">

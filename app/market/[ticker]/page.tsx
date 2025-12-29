@@ -1,6 +1,6 @@
 "use client";
 
-import { use } from "react";
+import { use, useState } from "react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import UnifiedMasterChart from "@/components/UnifiedMasterChart";
@@ -11,12 +11,14 @@ import Link from "next/link";
 
 export default function AssetPage({ params }: { params: Promise<{ ticker: string }> }) {
     const { ticker } = use(params);
+    const [isCollapsed, setIsCollapsed] = useState(false);
+    const toggleSidebar = () => setIsCollapsed(!isCollapsed);
 
     return (
         <div className="flex min-h-screen bg-transparent text-foreground font-sans transition-colors duration-300">
-            <Sidebar />
+            <Sidebar isCollapsed={isCollapsed} toggleSidebar={toggleSidebar} />
 
-            <main className="flex-1 ml-64 overflow-x-hidden bg-background/95 min-h-screen">
+            <main className={`flex-1 overflow-x-hidden bg-background/95 min-h-screen transition-all duration-300 ${isCollapsed ? 'ml-20' : 'ml-64'}`}>
                 <Header />
 
                 <div className="p-8 h-[calc(100vh-80px)] overflow-hidden flex flex-col">
